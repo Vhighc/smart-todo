@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400&display=swap'); */
+
+:root{
+    /* --font-family-primary: 'Mulish', sans-serif;
+
+    --font-size-normal: 18px;
+
+    --font-weight-primary: 400;
+    --font-weight-secondary: 700;
+
+    --primary-color: #458FF6;
+    --secondary-color: #FFFFFF; */
+
+    
+    /* --dark-text: #f8fbff;
+    --light-body: #f3f8fe;
+    --light-main: #fdfdfd;
+    --light-second: #E0E0E0;
+    --light-hover: #f0f0f0;
+    --light-text: #151426;
+    --light-btn: #9796f0;
+    --blue: #0000ff;
+    --white: #fff;
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --font-family: consolas; */
+  
+}  
+body{
+    display: flex;
+}
+.calendar{
+    flex-basis: 50%;
+    background: #1E2B27;
+    padding: 2% 3% 0 2%;
+    border: 1px solid red;
+}
+
+.goback{
+    display: flex;
+    /* position: absolute;
+    top: 45px; */
+} 
+.goback>h6{
+    /* text-align: center; */
+    line-height: 50px;
+}
+.date-container{
+    /* border: 1px solid yellow; */
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+.date>p{
+    color: #E0E0E0;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+.date>h2{
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: 400;
+}
+.settings{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-self: center;
+}
+.settings:hover{
+    transition:all .2s ease-in-out ;
+    transform: scale(1.12);
+}
+.month-container{
+    display: flex;
+    margin-top: 2em;
+    /* border: 1px solid yellow; */
+    justify-content: space-between;
+}
+.months{
+    margin: auto 0;
+    /* cursor: pointer; */
+}
+.month-picker:hover {
+    background-color: var(--color-hover);
+    color: var(--color-txt);
+    cursor: pointer;
+    transform: scale(1.12);
+    transition:all .2s ease-in-out ;  
+}
+.months>span{
+    color: #ABCC52;
+    font-size: 24px;
+    font-weight: 400;
+   
+}
+.year-change {
+    cursor: pointer;
+} 
+.year-change:hover {
+    background-color: var(--light-btn);
+    transition:all .2s ease-in-out ;
+    transform: scale(1.12);
+}
+#year:hover{
+    cursor: pointer;
+    transform: scale(1.9);
+    transition: all 0.2 ease-in-out;
+    color: chocolate;
+}
+.calendar-body {
+    /* pad: 20px; */
+    /* border: 1px solid blue; */
+}
+.calendar-week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    cursor: pointer;
+    color:rgb(104, 104, 104);
+    /* border: 1px solid yellow; */
+    margin: 4% 0 1.5% 0;
+}
+.calendar-week-days div:hover {
+   color:black;
+   transform: scale(1.2);
+   transition: all .2s ease-in-out;
+}
+.calendar-week-days div {
+    display: grid;
+    place-items: center;
+    color: #E0E0E0;
+    font-size: 24px;
+    font-weight: 400;
+}
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* gap: 2px; */
+}
+.calendar-days div {
+    /* border: 1px solid red; */
+    text-align: center;
+    color:#E0E0E0;
+    font-size: 24px;
+    font-weight: 400;
+    /* width: 37px; */
+    height: 33px;
+    margin-bottom: 5%;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center;  */
+    /* padding: 5px; */
+    /* position: relative; */
+    cursor: pointer;
+    animation: to-top 1s forwards; 
+}
+.calendar-days div span {
+    position: absolute;
+}
+.calendar-days div:hover {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    background-color: #fbc7d4;
+    /* border-radius: 20%; */
+    color: var(--dark-text);
+}
+.calendar-days div.current-date {
+    color: #ABCC52;
+    /* background-color: var(--light-btn); */
+    /* border-radius: 20%; */
+}
+.month-list {
+    position: relative;
+    left: 0;
+    top: -50px;
+    background-color: #ebebeb;
+    color: var(--light-text);
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    border-radius: 20px;
+}
+.month-list > div {
+    display: grid;
+    place-content: center;
+    margin: 5px 10px;
+    transition: all 0.2s ease-in-out;
+}
+  .month-list > div > div {
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .month-list > div > div:hover {
+    background-color:var(--light-btn);
+    color: var(--dark-text);
+    transform: scale(0.9);
+    transition: all 0.2s ease-in-out;
+  }
+  .month-list.show {
+    visibility: visible;
+    pointer-events: visible;
+    transition: 0.6s ease-in-out;
+    animation: to-left .71s forwards;
+  }
+  .month-list.hideonce{
+    visibility: hidden;
+  }
+  .month-list.hide {
+    animation: to-right 1s forwards;
+    visibility: none;
+    pointer-events: none;
+  }
+
+
+
+
+
+
+
+
+
+
+  
+.todos{
+    background: #1E2B27;
+    flex-basis: 50%;
+    padding: 5% 3% 2% 4%;
+    /* border: 1px solid yellow; */
+}
+.goback>h6 {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+}
+.mic{
+    box-shadow: 0px 2px 10px 0px #3232471A;
+    display: flex;
+    background: linear-gradient(0deg, #1C2700, #1C2700);
+    height: 55px;
+    border-radius: 16px;
+    gap: 12px;
+    margin-bottom: 2%;
+}
+.mic>p {
+    color: #FFFFFF;
+}
+.wakeup{
+    box-shadow: 0px 2px 10px 0px #3232471A;
+    background: linear-gradient(0deg, #ABCC52, #ABCC52);
+    display: flex;
+    height: 65px;
+    border-radius: 16px;
+    gap: 12px;
+    margin-bottom: 2%;
+    /* padding: 20px, 16px, 20px, 16px; */
+}
+.ginger{
+    box-shadow: 0px 2px 10px 0px #3232471A;
+    background: linear-gradient(0deg, #ABCC52, #ABCC52);
+    display: flex;
+    height: 65px;
+    border-radius: 16px;
+    gap: 12px;
+    margin-bottom: 2%;
+    /* padding: 20px, 16px, 20px, 16px; */
+}
+.weather{
+    box-shadow: 0px 2px 10px 0px #3232471A;
+    background: linear-gradient(0deg, #ABCC52, #ABCC52);
+    display: flex;
+    height: 65px;
+    border-radius: 16px;
+    gap: 12px;
+    margin-bottom: 2%;
+    /* padding: 20px, 16px, 20px, 16px; */
+}
+.design{
+    box-shadow: 0px 2px 10px 0px #3232471A;
+    background: linear-gradient(0deg, #ABCC52, #ABCC52);
+    display: flex;
+    height: 65px;
+    border-radius: 16px;
+    gap: 12px;
+    margin-bottom: 2%;
+    /* padding: 20px, 16px, 20px, 16px; */
+}
+.market{
+    box-shadow: 0px 2px 10px 0px #3232471A;
+    background: #181916;
+    display: flex;
+    height: 55px;
+    border-radius: 16px;
+    gap: 12px;
+    margin-bottom: 2%;
+    /* padding: 20px, 16px, 20px, 16px; */
+}
+.market>p{
+    color: #303237;
+
+}
+
+

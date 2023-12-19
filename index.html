@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Todo</title>
+    <!-- <link rel="shortcut icon" href="./Images/HERO/favicon.svg" type="image/x-icon"> -->
+    <link rel="stylesheet" href="./index.css">   
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+  </head>
+  <body>
+
+    <div id="app" class="calendar">
+        <div class="goback">
+            <img src="./images/chevron-left.svg" alt="">
+            <h6>Go Back</h6>
+        </div> 
+        <div class="date-container">
+            <div>
+                <div class="date">
+                    <p class="date-formate">April 10, 2020</p>
+                    <h2>Friday</h2>
+                </div>
+            </div>
+            <div class="settings">
+                <img src="./images/vuesax/linear/settings.svg" alt="">
+            </div>
+        </div>
+        <div class="month-container">
+            <div class="year-change" id="pre-year"><img src="./images/Back button.svg" alt=""></div>       
+            <div class="months">
+                <span class="month-picker" id="month-picker"> April </span>
+                <span class="year-picker" id="year-picker"></span>
+                <span id="year">2020</span>
+            </div>
+            <div class="year-change" id="next-year"><img src="./images/Forward button.svg" alt=""></div>
+                
+        </div>
+        <div class="calendar-body">
+            <div class="calendar-week-days">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+        </div>
+        <div class="month-list"></div>
+    </div>
+
+    <div id="app" class="todos">
+        <div class="lists">
+            <div class="mic">
+                <img src="./images/small-microphone.svg" alt="">
+                <p>refuse to stress over things outside of your control.</p>
+            </div>
+            <div class="wakeup">
+                <input type="checkbox" name="" id="">
+                <p>Wake up Early</p>
+            </div>
+            <div class="ginger">
+                <input type="checkbox" name="" id="">
+                <p>Take my Ginger Shots</p>
+            </div>
+            <div class="weather">
+                <input type="checkbox" name="" id="">
+                <p>Check the weather for today</p>
+            </div>
+            <div class="design">
+                <input type="checkbox" name="" id="">
+                <p>Meet with sam for Design Review</p>
+            </div>
+            <div class="design">
+                <input type="checkbox" name="" id="">
+                <p>Meet with sam for Design Review</p>
+            </div>
+            <div class="design">
+                <input type="checkbox" name="" id="">
+                <p>Meet with sam for Design Review</p>
+            </div>
+            <div class="market">
+                <input type="checkbox" name="" id="">
+                <p>Market Campaign</p>
+            </div>
+        </div>  
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
